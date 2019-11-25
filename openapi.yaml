@@ -1,0 +1,58 @@
+openapi: 3.0.2
+info:
+  title: 'EDI3 Transport API Demo '
+  description: This API is an EDI3 demo for the transport section.
+  termsOfService: https://edi3.org/governance
+  contact:
+    url: https://github.com/edi3/edi3.github.io/issues/new
+  license:
+    name: UN/CEFACT IPR Policy
+    url: https://www.unece.org/fileadmin/DAM/cefact/cf_plenary/plenary12/ECE_TRADE_C_CEFACT_2010_20_Rev2E_UpdatedIPRpolicy.pdf
+  version: 1.0.0
+servers:
+- url: https://api.edi3.org/v2
+  description: Non existant demo server url
+- url: https://{username}.gigantic-server.com:{port}/{basePath}
+  description: The prodiction PI server
+  variables:
+    username:
+      description: This value is assigned by the service provider
+      default: demo
+    port:
+      default: "8443"
+      enum:
+      - "8443"
+      - "443"
+    basePath:
+      default: v2
+paths:
+  /journeys:
+    get:
+      tags:
+      - Journey
+      operationId: getAll
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/schemas/Journey'
+        404:
+          description: No journeys found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GeneralError'
+components:
+  schemas:
+    GeneralError:
+      $ref: 'components.yaml#/components/schemas/GeneralError'
+    Journey:
+      $ref: 'components.yaml#/components/schemas/Journey'

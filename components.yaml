@@ -1,0 +1,279 @@
+openapi: 3.0.2
+info:
+  title: 'Components'
+  description: nichts zu sehen.
+  termsOfService: https://edi3.org/governance
+  contact:
+    url: https://github.com/edi3/edi3.github.io/issues/new
+  license:
+    name: UN/CEFACT IPR Policy
+    url: https://www.unece.org/fileadmin/DAM/cefact/cf_plenary/plenary12/ECE_TRADE_C_CEFACT_2010_20_Rev2E_UpdatedIPRpolicy.pdf
+  version: 1.0.0
+paths:
+components:
+  schemas:
+    GeneralError:
+      type: object
+      properties:
+        code:
+          type: Code. Type
+          description: Code description
+        message:
+          type: Text. Type
+          description: Message description
+    Journey:
+      type: object
+      properties:
+        Identification:
+          type: Identifier. Type
+        TerminalOperatorAssignedIdentification:
+          type: Identifier. Type
+        Stay:
+          type: Identifier. Type
+        Status:
+          type: Code. Type
+        Mode:
+          type: Code. Type
+        Stage:
+          type: Code. Type
+        CargoDescription:
+          type: Text. Type
+        Closing:
+          type: Date Time. Type
+        Information:
+          type: Text. Type
+        DangerousGoods:
+          type: Indicator. Type
+        ManifestOnboard:
+          type: Indicator. Type
+        TransitDirection:
+          type: Code. Type
+        TransportEquipment:
+          type: Quantity. Type
+        Package:
+          type: Quantity. Type
+        Consignment:
+          type: Quantity. Type
+        Crew:
+          type: Quantity. Type
+        CrewNationality:
+          type: Code. Type
+        Passenger:
+          type: Quantity. Type
+        PassengerNationality:
+          type: Code. Type
+        RelatedTransportRoute:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelatedTransportRoute'
+        ScheduledEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduledEvent'
+        EstimatedEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/EstimatedEvent'
+        ActualEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualEvent'
+        TransportMovementParty:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransportMovementParty'
+        UsedTransportMeans:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsedTransportMeans'
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: String
+    TransportEvent:
+      type: object
+      properties:
+        Type:
+          type: TransportEventType_ Code. Type
+        OccurrenceTime:
+          type: Date Time. Type
+        ReportedTime:
+          type: Date Time. Type
+        Description:
+          type: Text. Type
+        id:
+          type: String
+        EventLocation:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventLocation'
+        RelatedLocation:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelatedLocation'
+        CertifyingTradeParty:
+          type: array
+          items:
+            $ref: '#/components/schemas/CertifyingTradeParty'
+    Vehicle:
+      type: object
+      properties:
+        Identification:
+          type: Identifier. Type
+        Name:
+          type: Text. Type
+        CargoGrossWeight:
+          type: Measure. Type
+        Conference:
+          type: Code. Type
+        GrossWeight:
+          type: Measure. Type
+        ISPSSecurityLevel:
+          type: Code. Type
+        Length:
+          type: Measure. Type
+        LoadedCargo:
+          type: Measure. Type
+        NetWeight:
+          type: Measure. Type
+        RequiredLaneLength:
+          type: Measure. Type
+        Sequence:
+          type: Numeric. Type
+        Type:
+          type: Code. Type
+        TypeText:
+          type: Text. Type
+        WasteReportingExemption:
+          type: Indicator. Type
+        RegistrationCountry:
+          type: Code. Type
+        OperatorNationality:
+          type: Code. Type
+        DriverAccompanied:
+          type: Indicator. Type
+        AxleLoad:
+          type: Measure. Type
+        TransportMeansParty:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransportMeansParty'
+    Vessel:
+      type: object
+      properties:
+        Identification:
+          type: Identifier. Type
+        Name:
+          type: Text. Type
+        CargoGrossWeight:
+          type: Measure. Type
+        Conference:
+          type: Code. Type
+        GrossWeight:
+          type: Measure. Type
+        ISPSSecurityLevel:
+          type: Code. Type
+        Length:
+          type: Measure. Type
+        LoadedCargo:
+          type: Measure. Type
+        NetWeight:
+          type: Measure. Type
+        RequiredLaneLength:
+          type: Measure. Type
+        Sequence:
+          type: Numeric. Type
+        Type:
+          type: Code. Type
+        TypeText:
+          type: Text. Type
+        WasteReportingExemption:
+          type: Indicator. Type
+        RegistrationCountry:
+          type: Code. Type
+        OperatorNationality:
+          type: Code. Type
+        DraughtLevel:
+          type: Measure. Type
+        ForwardDraughtLevel:
+          type: Measure. Type
+        AftDraughtLevel:
+          type: Measure. Type
+        Helipad:
+          type: Indicator. Type
+        ManoeuvringSpeed:
+          type: Measure. Type
+        TransportMeansParty:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransportMeansParty'
+    Voyage:
+      type: object
+      properties:
+        Identification:
+          type: Identifier. Type
+        TerminalOperatorAssignedIdentification:
+          type: Identifier. Type
+        Stay:
+          type: Identifier. Type
+        Status:
+          type: Code. Type
+        Mode:
+          type: Code. Type
+        Stage:
+          type: Code. Type
+        CargoDescription:
+          type: Text. Type
+        Closing:
+          type: Date Time. Type
+        Information:
+          type: Text. Type
+        DangerousGoods:
+          type: Indicator. Type
+        ManifestOnboard:
+          type: Indicator. Type
+        TransitDirection:
+          type: Code. Type
+        TransportEquipment:
+          type: Quantity. Type
+        Package:
+          type: Quantity. Type
+        Consignment:
+          type: Quantity. Type
+        Crew:
+          type: Quantity. Type
+        CrewNationality:
+          type: Code. Type
+        Passenger:
+          type: Quantity. Type
+        PassengerNationality:
+          type: Code. Type
+        PilotageExemption:
+          type: Identifier. Type
+        SailingAdviceNotificationInformation:
+          type: Text. Type
+        RelatedTransportRoute:
+          type: array
+          items:
+            $ref: '#/components/schemas/RelatedTransportRoute'
+        ScheduledEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduledEvent'
+        EstimatedEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/EstimatedEvent'
+        ActualEvent:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActualEvent'
+        TransportMovementParty:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransportMovementParty'
+        UsedTransportMeans:
+          type: array
+          items:
+            $ref: '#/components/schemas/UsedTransportMeans'

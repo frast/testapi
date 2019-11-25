@@ -40,6 +40,6 @@ paths:
 components:
   schemas:
     GeneralError:
-      $ref: 'components.yaml#/components/schemas/GeneralError'
+      $ref: 'https://raw.githubusercontent.com/frast/testapi/master/components.yaml#/components/schemas/GeneralError'
     Journey:
-      $ref: 'components.yaml#/components/schemas/Journey'
+      $ref: 'https://raw.githubusercontent.com/frast/testapi/master/components.yaml#/components/schemas/Journey'

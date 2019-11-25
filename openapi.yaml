@@ -10,21 +10,8 @@ info:
     url: https://www.unece.org/fileadmin/DAM/cefact/cf_plenary/plenary12/ECE_TRADE_C_CEFACT_2010_20_Rev2E_UpdatedIPRpolicy.pdf
   version: 1.0.0
 servers:
-- url: https://api.edi3.org/v2
+- url: https://raw.githubusercontent.com/frast/testapi/master
   description: Non existant demo server url
-- url: https://{username}.gigantic-server.com:{port}/{basePath}
-  description: The prodiction PI server
-  variables:
-    username:
-      description: This value is assigned by the service provider
-      default: demo
-    port:
-      default: "8443"
-      enum:
-      - "8443"
-      - "443"
-    basePath:
-      default: v2
 paths:
   /journeys:
     get:

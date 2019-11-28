@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: 'EDI3 Transport API Demo '
+  title: 'EDI3 Transport API Demo'
   description: This API is an EDI3 demo for the transport section.
   termsOfService: https://edi3.org/governance
   contact:
